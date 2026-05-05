@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baladi Bites | Fine Dining</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Baladi Bites</a>
+            <ul class="nav__links">
+                <li><a href="#story" class="nav__link">Our Story</a></li>
+                <li><a href="#menu" class="nav__link">Menu</a></li>
+                <li><a href="#reserve" class="nav__link">Reserve</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+        </nav>
+        <div class="mobile-nav">
+            <ul class="mobile-nav__links">
+                <li><a href="#story" class="mobile-nav__link">Our Story</a></li>
+                <li><a href="#menu" class="mobile-nav__link">Menu</a></li>
+                <li><a href="#reserve" class="mobile-nav__link">Reserve</a></li>
+                <li><a href="#contact" class="mobile-nav__link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__bg"></div>
+            <div class="hero__content container">
+                <h1 class="hero__title">Culinary Artistry, Redefined</h1>
+                <p class="hero__subtitle">An immersive dining experience where flavor meets finesse</p>
+                <a href="#reserve" class="btn btn--primary">Reserve a Table</a>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section id="story" class="section story">
+            <div class="container story__grid">
+                <div class="story__image scroll-reveal">
+                    <div class="story__image-wrapper">
+                        <!-- Our story image -->
+                        <div class="placeholder-image" style="background-image: url('https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+                    </div>
+                </div>
+                <div class="story__text scroll-reveal">
+                    <h2 class="section__title">Our Story</h2>
+                    <p class="story__paragraph">Founded in 2018, Baladi Bites emerged from a collective of chefs and sommeliers disillusioned with rigid fine dining traditions. We trade formality for intentionality: every dish is a narrative of seasonality, terroir, and craft.</p>
+                    <p class="story__paragraph">Our kitchen sources 90% of ingredients from local farms within 100 miles, with a focus on regenerative agriculture and ethical sourcing.</p>
+                    <div class="story__stat">
+                        <span class="stat__number">4.9</span>
+                        <span class="stat__label">Average Rating (1200+ Reviews)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="section menu">
+            <div class="container">
+                <h2 class="section__title scroll-reveal">Authentic Egyptian Menu</h2>
+                <p class="section__subtitle scroll-reveal">Traditional flavors, authentic recipes | Dietary accommodations available on request</p>
+                <div class="menu__tabs scroll-reveal">
+                    <button class="menu__tab active" data-category="all">All</button>
+                    <button class="menu__tab" data-category="mezze">Appetizers</button>
+                    <button class="menu__tab" data-category="soups-salads">Soups & Salads</button>
+                    <button class="menu__tab" data-category="mains">Mains</button>
+                    <button class="menu__tab" data-category="desserts">Desserts</button>
+                    <button class="menu__tab" data-category="beverages">Drinks</button>
+                </div>
+                <div class="menu__grid">
+                    <!-- Mezze (Appetizers) -->
+                    <div class="menu-item scroll-reveal" data-category="mezze">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://images.unsplash.com/photo-1701688596783-231b3764ef67?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Taameya (Egyptian Falafel)</h3>
+                            <p class="menu-item__desc">Crispy, deep-fried patties made from ground fava beans, fresh herbs, and spices. Served with tahini dip.</p>
+                            <span class="menu-item__price">75 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="mezze">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://tarasmulticulturaltable.com/wp-content/uploads/2021/09/Hawawshi-Egyptian-Meat-Stuffed-Bread-3-of-3.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Hawawshi</h3>
+                            <p class="menu-item__desc">Crispy, oven-baked baladi bread stuffed with a spiced mixture of minced beef, onions, and bell peppers.</p>
+                            <span class="menu-item__price">120 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="mezze">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://www.theendlessmeal.com/wp-content/uploads/2018/09/Baba-Ganoush-recipe-750x750.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Classic Hummus & Baba Ganoush</h3>
+                            <p class="menu-item__desc">A duo of creamy chickpea puree and smoky roasted eggplant dip, served with warm, freshly baked baladi bread.</p>
+                            <span class="menu-item__price">90 EGP</span>
+                        </div>
+                    </div>
+
+                    <!-- Soups & Salads -->
+                    <div class="menu-item scroll-reveal" data-category="soups-salads">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://media.istockphoto.com/id/1490938624/photo/egyptian-traditional-food-molokhyia.jpg?s=612x612&w=0&k=20&c=Lq4S7JiO0O7i8OnydEmXcKAFef3oJOG7vDvZ_4C8KU8=')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Traditional Molokhia</h3>
+                            <p class="menu-item__desc">A rich, savory soup made from finely chopped jute leaves, slow-cooked in chicken broth and finished with a sizzling garlic and coriander taqliya. Served with a side of white rice.</p>
+                            <span class="menu-item__price">110 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="soups-salads">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Salata_baladi.jpg/1280px-Salata_baladi.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Salata Baladi</h3>
+                            <p class="menu-item__desc">A refreshing, finely chopped salad of ripe tomatoes, cucumbers, red onions, and parsley, dressed with lemon juice, white vinegar, and cumin.</p>
+                            <span class="menu-item__price">65 EGP</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Courses -->
+                    <div class="menu-item scroll-reveal" data-category="mains">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e9/Egyptian_food_Koshary.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Koshari</h3>
+                            <p class="menu-item__desc">Egypt's famous street food classic. A hearty bowl of rice, brown lentils, and macaroni, topped with a zesty spiced tomato sauce, garlic-vinegar drizzle (dakka), and crispy fried onions.</p>
+                            <span class="menu-item__price">140 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="mains">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://www.unileverfoodsolutions.eg/dam/global-ufs/mcos/meps/arabia/calcmenu/recipes/EG-recipes/In-Development/beef-shank-over-egyptian-fatta/main-header.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Fattah</h3>
+                            <p class="menu-item__desc">Layers of toasted baladi bread and fluffy white rice, topped with tender chunks of slow-roasted beef, and generously smothered in a rich garlic-vinegar tomato sauce.</p>
+                            <span class="menu-item__price">280 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="mains">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://www.seriouseats.com/thmb/VDkcBrPDtVa4kBHa6XvklX2taB8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__20090813-lamb-kofta-4cea300ea5664787995b284c6a5ea9bb.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Kofta</h3>
+                            <p class="menu-item__desc">Charcoal-grilled skewers of marinated beef chunks (kebab) and seasoned minced meat (kofta). Served with grilled vegetables, rice, and tahini.</p>
+                            <span class="menu-item__price">420 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="mains">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://tarasmulticulturaltable.com/wp-content/uploads/2019/01/Macarona-Bechamel-Egyptian-Baked-Pasta-2-of-3.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Macarona Béchamel</h3>
+                            <p class="menu-item__desc">A comforting baked pasta dish featuring layers of penne, spiced minced meat, and a thick, golden-brown crust of creamy béchamel sauce.</p>
+                            <span class="menu-item__price">190 EGP</span>
+                        </div>
+                    </div>
+
+                    <!-- Desserts -->
+                    <div class="menu-item scroll-reveal" data-category="desserts">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://t3.ftcdn.net/jpg/07/62/13/36/360_F_762133669_JiKxY4Dh9N9XXSTaU0Bs4FVhsabb4Xl3.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Om Ali</h3>
+                            <p class="menu-item__desc">A warm, rich bread pudding made with layers of puff pastry, milk, mixed nuts, coconut flakes, and raisins, baked until golden and bubbling.</p>
+                            <span class="menu-item__price">110 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="desserts">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://thumbs.dreamstime.com/b/square-piece-basbousa-cream-held-fork-above-tray-dessert-has-golden-brown-crust-topped-crushed-384916424.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Basbousa</h3>
+                            <p class="menu-item__desc">A sweet, syrup-soaked semolina cake topped with roasted almonds.</p>
+                            <span class="menu-item__price">85 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="desserts">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://www.osiristours.com/wp-content/uploads/2023/12/Roz-Bel-Laban.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Roz Bel Laban</h3>
+                            <p class="menu-item__desc">Creamy, traditional Egyptian rice pudding sprinkled with cinnamon and crushed pistachios.</p>
+                            <span class="menu-item__price">70 EGP</span>
+                        </div>
+                    </div>
+
+                    <!-- Beverages -->
+                    <div class="menu-item scroll-reveal" data-category="beverages">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://static.vecteezy.com/system/resources/previews/075/407/500/large_2x/egyptian-karkadeh-hibiscus-tea-free-photo.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Karkadeh (Hibiscus Tea)</h3>
+                            <p class="menu-item__desc">Served chilled and sweetened, offering a tart and refreshing floral flavor.</p>
+                            <span class="menu-item__price">45 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="beverages">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://t4.ftcdn.net/jpg/05/88/95/49/360_F_588954911_S2dXt8djD0SJ03XFjbmGKepOZfJwVFGn.jpg')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Fresh Sugarcane Juice (Asab)</h3>
+                            <p class="menu-item__desc">Freshly pressed, naturally sweet, and served ice cold.</p>
+                            <span class="menu-item__price">40 EGP</span>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal" data-category="beverages">
+                        <div class="menu-item__image">
+                            <div class="placeholder-image small" style="background-image: url('https://img.freepik.com/premium-photo/refreshing-glass-iced-tea-with-mint-leaves_1306868-11833.jpg?semt=ais_hybrid&w=740&q=80')"></div>
+                        </div>
+                        <div class="menu-item__content">
+                            <h3 class="menu-item__name">Egyptian Mint Tea</h3>
+                            <p class="menu-item__desc">Hot black tea steeped with fresh mint leaves and raw sugar.</p>
+                            <span class="menu-item__price">35 EGP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section id="reserve" class="section reserve">
+            <div class="container reserve__grid">
+                <div class="reserve__text scroll-reveal">
+                    <h2 class="section__title">Reserve Your Table</h2>
+                    <p class="reserve__paragraph">Book your spot for an unforgettable evening. We recommend reserving 2-3 weeks in advance for weekend slots. Large parties (8+) please call directly.</p>
+                </div>
+                <form class="reserve__form scroll-reveal" id="reservation-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder=" " required>
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="date" id="date" placeholder=" " required>
+                            <label for="date">Date</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="time" id="time" placeholder=" " required>
+                            <label for="time">Time</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="guests" placeholder=" " min="1" max="12" required>
+                        <label for="guests">Number of Guests</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="notes" placeholder=" " rows="3"></textarea>
+                        <label for="notes">Special Requests (Allergies, Occasions)</label>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Confirm Reservation</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer__grid">
+            <div class="footer__col scroll-reveal">
+                <h3 class="footer__title">Baladi Bites</h3>
+                <p class="footer__text">Fine dining reimagined.</p>
+            </div>
+            <div class="footer__col scroll-reveal">
+                <h4 class="footer__subtitle">Visit Us</h4>
+                <p class="footer__text">Thebes Academy<br>El Maadi</p>
+            </div>
+            <div class="footer__col scroll-reveal">
+                <h4 class="footer__subtitle">Hours</h4>
+                <p class="footer__text">Sun-Thu : 8AM - 5PM<br>Fri-Sat : Closed</p>
+            </div>
+            <div class="footer__col scroll-reveal">
+                <h4 class="footer__subtitle">Follow Us</h4>
+                <div class="footer__social">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="container">&copy; Made By Gamal Mohamed Adly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
