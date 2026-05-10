@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Baladi Bites</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #cart-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-secondary);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+        }
+        .cart-item__info {
+            flex: 1;
+        }
+        .cart-item__name {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        .cart-item__details {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .cart-item__image {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        .cart-item__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cart-item__remove {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .cart-item__remove:hover {
+            background: #c0392b;
+            border-color: #c0392b;
+        }
+        .cart-summary {
+            text-align: center;
+            padding: var(--spacing-md);
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+        }
+        .cart-summary__total {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: var(--spacing-lg);
+            color: var(--text-secondary);
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .modal {
+            background: var(--bg-secondary);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 450px;
+        }
+        .modal h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        .success-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 2rem 2.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1.2rem;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            text-align: center;
+            animation: popIn 0.3s ease;
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Baladi Bites</a>
+            <ul class="nav__links">
+                <li><a href="index.html#story" class="nav__link">Our Story</a></li>
+                <li><a href="index.html#menu" class="nav__link">Menu</a></li>
+                <li><a href="index.html#reserve" class="nav__link">Reserve</a></li>
+                <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+                <li><a href="cart.html" class="nav__link">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+        </nav>
+        <div class="mobile-nav">
+            <ul class="mobile-nav__links">
+                <li><a href="index.html#story" class="mobile-nav__link">Our Story</a></li>
+                <li><a href="index.html#menu" class="mobile-nav__link">Menu</a></li>
+                <li><a href="index.html#reserve" class="mobile-nav__link">Reserve</a></li>
+                <li><a href="index.html#contact" class="mobile-nav__link">Contact</a></li>
+                <li><a href="cart.html" class="mobile-nav__link">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section__title" style="margin-bottom: 2rem;">Your Cart</h2>
+                <div id="cart-container"></div>
+                <div class="cart-summary" id="cart-summary">
+                    <p class="cart-summary__total">Total: <span id="cart-total">0</span> EGP</p>
+                    <button class="btn btn--primary" onclick="checkout()">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container footer__grid">
+            <div class="footer__col scroll-reveal">
+                <h3 class="footer__title">Baladi Bites</h3>
+                <p class="footer__text">Fine dining reimagined.</p>
+            </div>
+            <div class="footer__col scroll-reveal">
+                <h4 class="footer__subtitle">Visit Us</h4>
+                <p class="footer__text">Thebes Academy<br>El Maadi</p>
+            </div>
+            <div class="footer__col scroll-reveal">
+                <h4 class="footer__subtitle">Hours</h4>
+                <p class="footer__text">Sun-Thu : 8AM - 5PM<br>Fri-Sat : Closed</p>
+            </div>
+            <div class="footer__col scroll-reveal">
+                <h4 class="footer__subtitle">Follow Us</h4>
+                <div class="footer__social">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="container">&copy; Made By Gamal Mohamed Adly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('restaurantCart')) || [];
+            const container = document.getElementById('cart-container');
+            const totalEl = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<div class="cart-empty"><p>Your cart is empty.</p><a href="index.html#menu" class="btn btn--primary" style="margin-top:1rem;">Browse Menu</a></div>';
+                document.getElementById('cart-summary').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('cart-summary').style.display = 'block';
+
+            let total = 0;
+            let html = '';
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                const img = item.image ? `<div class="cart-item__image"><img src="${item.image}" alt="${item.name}"></div>` : '';
+                html += `
+                    <div class="cart-item">
+                        ${img}
+                        <div class="cart-item__info">
+                            <p class="cart-item__name">${item.name}</p>
+                            <p class="cart-item__details">${item.price} EGP x ${item.quantity} = ${itemTotal} EGP</p>
+                        </div>
+                        <button class="cart-item__remove" onclick="removeItem(${index})">Remove</button>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+            totalEl.textContent = total;
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('restaurantCart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('restaurantCart', JSON.stringify(cart));
+            renderCart();
+            if (typeof updateCartCount === 'function') updateCartCount();
+        }
+
+        function checkout() {
+            const cart = JSON.parse(localStorage.getItem('restaurantCart')) || [];
+            if (cart.length === 0) return;
+
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+            overlay.innerHTML = `
+                <div class="modal">
+                    <h3>Complete Your Order</h3>
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <input type="text" id="c-name" placeholder=" " required>
+                            <label for="c-name">Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="c-email" placeholder=" " required>
+                            <label for="c-email">Email Address</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="c-phone" placeholder=" " required>
+                            <label for="c-phone">Phone Number</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="c-address" placeholder=" " rows="2" required></textarea>
+                            <label for="c-address">Delivery Address</label>
+                        </div>
+                        <button type="submit" class="btn btn--primary" style="width:100%;">Place Order</button>
+                        <button type="button" class="btn" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,0.2);margin-top:0.5rem;" onclick="this.closest('.modal-overlay').remove()">Cancel</button>
+                    </form>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+
+            document.getElementById('checkout-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('restaurantCart');
+                overlay.remove();
+                showSuccess('Your order has been processed! Thank you for your purchase.');
+                renderCart();
+                if (typeof updateCartCount === 'function') updateCartCount();
+            });
+        }
+
+        function showSuccess(message) {
+            const el = document.createElement('div');
+            el.className = 'success-notification';
+            el.textContent = message;
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 4000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+            if (typeof updateCartCount === 'function') updateCartCount();
+        });
+    </script>
+</body>
+</html>

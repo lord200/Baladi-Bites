@@ -64,3 +64,46 @@ window.addEventListener('scroll', () => {
         header.style.padding = '1.5rem 0';     
     } 
 });
+
+// Cart functionality
+let cart = JSON.parse(localStorage.getItem('restaurantCart')) || [];
+
+function updateCartCount() {
+    const current = JSON.parse(localStorage.getItem('restaurantCart')) || [];
+    const total = current.reduce((sum, item) => sum + item.quantity, 0);
+    document.querySelectorAll('.cart-count').forEach(el => el.textContent = total);
+}
+
+function showToast(message) {
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        const price = parseInt(btn.dataset.price);
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+            existing.quantity++;
+        } else {
+            cart.push({ name, price, quantity: 1, image: btn.dataset.image });
+        }
+        localStorage.setItem('restaurantCart', JSON.stringify(cart));
+        updateCartCount();
+        showToast(name + ' added to the cart');
+        btn.textContent = 'Added!';
+        setTimeout(() => { btn.textContent = 'Add to Cart'; }, 1000);
+    });
+});
+
+updateCartCount();

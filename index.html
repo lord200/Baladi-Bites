@@ -18,6 +18,7 @@
                 <li><a href="#menu" class="nav__link">Menu</a></li>
                 <li><a href="#reserve" class="nav__link">Reserve</a></li>
                 <li><a href="#contact" class="nav__link">Contact</a></li>
+                <li><a href="cart.html" class="nav__link">Cart (<span class="cart-count">0</span>)</a></li>
             </ul>
             <button class="hamburger" aria-label="Toggle navigation">
                 <span class="hamburger__line"></span>
@@ -31,6 +32,7 @@
                 <li><a href="#menu" class="mobile-nav__link">Menu</a></li>
                 <li><a href="#reserve" class="mobile-nav__link">Reserve</a></li>
                 <li><a href="#contact" class="mobile-nav__link">Contact</a></li>
+                <li><a href="cart.html" class="mobile-nav__link">Cart (<span class="cart-count">0</span>)</a></li>
             </ul>
         </div>
     </header>
@@ -89,7 +91,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Taameya (Egyptian Falafel)</h3>
                             <p class="menu-item__desc">Crispy, deep-fried patties made from ground fava beans, fresh herbs, and spices. Served with tahini dip.</p>
-                            <span class="menu-item__price">75 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">15 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Taameya (Egyptian Falafel)" data-image="https://images.unsplash.com/photo-1701688596783-231b3764ef67?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-price="75">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="mezze">
@@ -99,7 +104,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Hawawshi</h3>
                             <p class="menu-item__desc">Crispy, oven-baked baladi bread stuffed with a spiced mixture of minced beef, onions, and bell peppers.</p>
-                            <span class="menu-item__price">120 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">120 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Hawawshi" data-image="https://tarasmulticulturaltable.com/wp-content/uploads/2021/09/Hawawshi-Egyptian-Meat-Stuffed-Bread-3-of-3.jpg" data-price="120">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="mezze">
@@ -109,7 +117,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Classic Hummus & Baba Ganoush</h3>
                             <p class="menu-item__desc">A duo of creamy chickpea puree and smoky roasted eggplant dip, served with warm, freshly baked baladi bread.</p>
-                            <span class="menu-item__price">90 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">40 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Classic Hummus & Baba Ganoush" data-image="https://www.theendlessmeal.com/wp-content/uploads/2018/09/Baba-Ganoush-recipe-750x750.jpg" data-price="90">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
 
@@ -121,7 +132,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Traditional Molokhia</h3>
                             <p class="menu-item__desc">A rich, savory soup made from finely chopped jute leaves, slow-cooked in chicken broth and finished with a sizzling garlic and coriander taqliya. Served with a side of white rice.</p>
-                            <span class="menu-item__price">110 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">110 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Traditional Molokhia" data-image="https://media.istockphoto.com/id/1490938624/photo/egyptian-traditional-food-molokhyia.jpg?s=612x612&w=0&k=20&c=Lq4S7JiO0O7i8OnydEmXcKAFef3oJOG7vDvZ_4C8KU8=" data-price="110">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="soups-salads">
@@ -131,7 +145,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Salata Baladi</h3>
                             <p class="menu-item__desc">A refreshing, finely chopped salad of ripe tomatoes, cucumbers, red onions, and parsley, dressed with lemon juice, white vinegar, and cumin.</p>
-                            <span class="menu-item__price">65 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">30 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Salata Baladi" data-image="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Salata_baladi.jpg/1280px-Salata_baladi.jpg" data-price="65">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
 
@@ -143,7 +160,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Koshari</h3>
                             <p class="menu-item__desc">Egypt's famous street food classic. A hearty bowl of rice, brown lentils, and macaroni, topped with a zesty spiced tomato sauce, garlic-vinegar drizzle (dakka), and crispy fried onions.</p>
-                            <span class="menu-item__price">140 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">80 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Koshari" data-image="https://upload.wikimedia.org/wikipedia/commons/e/e9/Egyptian_food_Koshary.jpg" data-price="140">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="mains">
@@ -153,7 +173,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Fattah</h3>
                             <p class="menu-item__desc">Layers of toasted baladi bread and fluffy white rice, topped with tender chunks of slow-roasted beef, and generously smothered in a rich garlic-vinegar tomato sauce.</p>
-                            <span class="menu-item__price">280 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">280 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Fattah" data-image="https://www.unileverfoodsolutions.eg/dam/global-ufs/mcos/meps/arabia/calcmenu/recipes/EG-recipes/In-Development/beef-shank-over-egyptian-fatta/main-header.jpg" data-price="280">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="mains">
@@ -163,7 +186,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Kofta</h3>
                             <p class="menu-item__desc">Charcoal-grilled skewers of marinated beef chunks (kebab) and seasoned minced meat (kofta). Served with grilled vegetables, rice, and tahini.</p>
-                            <span class="menu-item__price">420 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">420 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Kofta" data-image="https://www.seriouseats.com/thmb/VDkcBrPDtVa4kBHa6XvklX2taB8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__20090813-lamb-kofta-4cea300ea5664787995b284c6a5ea9bb.jpg" data-price="420">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="mains">
@@ -173,7 +199,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Macarona Béchamel</h3>
                             <p class="menu-item__desc">A comforting baked pasta dish featuring layers of penne, spiced minced meat, and a thick, golden-brown crust of creamy béchamel sauce.</p>
-                            <span class="menu-item__price">190 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">190 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Macarona Béchamel" data-image="https://tarasmulticulturaltable.com/wp-content/uploads/2019/01/Macarona-Bechamel-Egyptian-Baked-Pasta-2-of-3.jpg" data-price="190">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
 
@@ -185,7 +214,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Om Ali</h3>
                             <p class="menu-item__desc">A warm, rich bread pudding made with layers of puff pastry, milk, mixed nuts, coconut flakes, and raisins, baked until golden and bubbling.</p>
-                            <span class="menu-item__price">110 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">90 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Om Ali" data-image="https://t3.ftcdn.net/jpg/07/62/13/36/360_F_762133669_JiKxY4Dh9N9XXSTaU0Bs4FVhsabb4Xl3.jpg" data-price="110">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="desserts">
@@ -195,7 +227,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Basbousa</h3>
                             <p class="menu-item__desc">A sweet, syrup-soaked semolina cake topped with roasted almonds.</p>
-                            <span class="menu-item__price">85 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">100 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Basbousa" data-image="https://thumbs.dreamstime.com/b/square-piece-basbousa-cream-held-fork-above-tray-dessert-has-golden-brown-crust-topped-crushed-384916424.jpg" data-price="85">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="desserts">
@@ -205,7 +240,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Roz Bel Laban</h3>
                             <p class="menu-item__desc">Creamy, traditional Egyptian rice pudding sprinkled with cinnamon and crushed pistachios.</p>
-                            <span class="menu-item__price">70 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">70 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Roz Bel Laban" data-image="https://www.osiristours.com/wp-content/uploads/2023/12/Roz-Bel-Laban.jpg" data-price="70">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
 
@@ -217,7 +255,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Karkadeh (Hibiscus Tea)</h3>
                             <p class="menu-item__desc">Served chilled and sweetened, offering a tart and refreshing floral flavor.</p>
-                            <span class="menu-item__price">45 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">45 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Karkadeh (Hibiscus Tea)" data-image="https://static.vecteezy.com/system/resources/previews/075/407/500/large_2x/egyptian-karkadeh-hibiscus-tea-free-photo.jpg" data-price="45">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="beverages">
@@ -227,7 +268,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Fresh Sugarcane Juice (Asab)</h3>
                             <p class="menu-item__desc">Freshly pressed, naturally sweet, and served ice cold.</p>
-                            <span class="menu-item__price">40 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">40 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Fresh Sugarcane Juice (Asab)" data-image="https://t4.ftcdn.net/jpg/05/88/95/49/360_F_588954911_S2dXt8djD0SJ03XFjbmGKepOZfJwVFGn.jpg" data-price="40">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal" data-category="beverages">
@@ -237,7 +281,10 @@
                         <div class="menu-item__content">
                             <h3 class="menu-item__name">Egyptian Mint Tea</h3>
                             <p class="menu-item__desc">Hot black tea steeped with fresh mint leaves and raw sugar.</p>
-                            <span class="menu-item__price">35 EGP</span>
+                            <div class="menu-item__action">
+                                <span class="menu-item__price">35 EGP</span>
+                                <button class="add-to-cart-btn" data-name="Egyptian Mint Tea" data-image="https://img.freepik.com/premium-photo/refreshing-glass-iced-tea-with-mint-leaves_1306868-11833.jpg?semt=ais_hybrid&w=740&q=80" data-price="35">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
